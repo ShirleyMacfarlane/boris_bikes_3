@@ -1,5 +1,5 @@
 class Bike
     def working?
-Bike.new 
+      #Bike.new 
     end
 end
