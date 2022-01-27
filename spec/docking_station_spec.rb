@@ -1,4 +1,4 @@
-require 'docking_station'
+require './lib/docking_station'
 describe DockingStation do 
     it "responds to release_bike" do
     docking_station = DockingStation.new
