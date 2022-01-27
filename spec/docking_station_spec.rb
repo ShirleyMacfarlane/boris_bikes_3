@@ -14,5 +14,22 @@ describe DockingStation do
       expect(docking_station).to respond_to(:dock_bike)
     end
     #it "responds to see if a bike has been docked - ie if there are bikes docked" do
-    #end      
+    #end  
+    it "responds to a docking with one argument" do
+      docking_station = DockingStation.new
+      expect(docking_station).to respond_to(:dock_bike).with(1).argument
+    end  
+    it "responds to the passing of a new bike into method dock_bike" do
+      docking_station = DockingStation.new
+      bike = Bike.new
+      expect(docking_station.dock_bike(bike)).to eq bike
+    end
+    it "responds to checking that a bike has been docked" do
+      docking_station = DockingStation.new
+      bike = Bike.new
+      docking_station.dock_bike(bike)
+      expect (:dock_bikes.length > 0 == true)
+      
+    end
+
 end
