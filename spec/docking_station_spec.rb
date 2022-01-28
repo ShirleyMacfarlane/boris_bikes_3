@@ -37,7 +37,14 @@ describe DockingStation do
     it "returns the capacity" do
       expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
     end
-
+    it "Does not realease a bike that is not working" do
+      bike = Bike.new
+      bike.report
+      subject.dock(bike)
+      subject.release_bike
+      expect(bike.working?).to eq false
+      expect(subject.release_bike).to eq nil
+    end
     # it "Sets the capacity when creating a new docking station" do
     #   expect{subject.new(22)}.to eq(subject.capacity)
     # end

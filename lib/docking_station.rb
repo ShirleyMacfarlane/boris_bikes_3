@@ -9,7 +9,7 @@ class DockingStation
   end
   def release_bike
     fail "No bikes in Docking station" if empty?
-    return @dock_bikes.pop()
+    @dock_bikes[0].working ? @dock_bikes.pop() : nil
   end
   def dock(bike)
     fail "Docking station is full" if full?
